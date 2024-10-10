@@ -14,81 +14,66 @@ public class Main {
     System.out.println("2.Resta");
     System.out.println("3.Multiplicación");
     System.out.println("4.División");
-    System.out.println("5.Geometria");
+    System.out.println("5.Rectangulo");
+    System.out.println("6.Circulo");
+    System.out.println("7.Triangulo");
+    double num1,num2;
+    num1=0;
+    num2=0;
 
 
-
-      int numEntero = Integer.parseInt(stdIn.readLine());
-
-
+      double numEntero = Integer.parseInt(stdIn.readLine());
+      System.out.println("Ingresa el primer número:");
+      num1 = Integer.parseInt(stdIn.readLine());
+      System.out.println("Ingresa el segundo número:");
+      num2 = Integer.parseInt(stdIn.readLine());
+      
       if (numEntero == 1) {
         // Suma
-        System.out.println("Ingresa el primer número:");
-        int num1 = Integer.parseInt(stdIn.readLine());
-        System.out.println("Ingresa el segundo número:");
-        int num2 = Integer.parseInt(stdIn.readLine());
         System.out.println("El resultado es:" + (num1 + num2));
       }else if (numEntero == 2) {
         // Resta
-        System.out.println("Ingresa el primer número:");
-        int num1 = Integer.parseInt(stdIn.readLine());
-        System.out.println("Ingresa el segundo número:");
-        int num2 = Integer.parseInt(stdIn.readLine());
         System.out.println("El resultado es:" + (num1 - num2));
       }else if (numEntero == 3) {
         // Multiplicación
-        System.out.println("Ingresa el primer número:");
-        int num1 = Integer.parseInt(stdIn.readLine());
-        System.out.println("Ingresa el segundo número:");
-        int num2 = Integer.parseInt(stdIn.readLine());
         System.out.println("El resultado es:" + (num1 * num2));
       }else if (numEntero == 4) {
         // División 
-        System.out.println("Ingresa el primer número:");
-        int num1 = Integer.parseInt(stdIn.readLine());
-        System.out.println("Ingresa el segundo número:");
-        int num2 = Integer.parseInt(stdIn.readLine());
+        num2 = Integer.parseInt(stdIn.readLine());
         if(num2==0){
           System.out.println("Error");
         }else{
         System.out.println("El resultado es:" + (num1 / num2));
         }
-      }else if (numEntero<1 && numEntero>5){
+      }else if (numEntero<1 && numEntero>7){
         System.out.println("Error");
+      }else if(numEntero == 5){
+        // Rectangulo
+        System.out.println(rectangulo(num1,num2));
+      }else if(numEntero == 6){
+        // Circulo
+        System.out.println(circulo(num1));
+      }else if(numEntero == 7){
+        // Triangulo
+        System.out.println(triangulo(num1,num2));
       }
 
-
-      if(numEntero == 5){
-        System.out.println("Escoje una figura:");
-          
-          System.out.println("1.Circulo");
-          System.out.println("2.Cuadrado");
-          System.out.println("3.Triangulo");
-
-            int numeEntero = Integer.parseInt(stdIn.readLine());
-
-
-            if (numeEntero == 1) {
-              // Circulo
-              System.out.println("Ingresa el radio:");
-              int num1 = Integer.parseInt(stdIn.readLine());
-              System.out.println("El resultado es:" + (3.14* (num1 *num1)));
-            }else if (numeEntero == 2) {
-              // Cuadrado
-              System.out.println("Ingresa la medida del lado:");
-              int num1 = Integer.parseInt(stdIn.readLine());
-              System.out.println("El resultado es:" + (num1 * num1));
-            }else if (numeEntero == 3) {
-              // Triangulo
-              System.out.println("Ingresa la base:");
-              int num1 = Integer.parseInt(stdIn.readLine());
-              System.out.println("Ingresa la altura:");
-              int num2 = Integer.parseInt(stdIn.readLine());
-              System.out.println("El resultado es:" + ((num1 * num2) /2));
-            }else if ( numeEntero != 3 ||numEntero != 2 || numEntero != 1){
-              System.out.println("Error");
-            }
-      }
+      
+      
     }
   }
+  public static double rectangulo(double num1,double num2){
+    double resultado=num1*num2;
+    return resultado; 
+  }
+  
+  public static double circulo(double num1){
+    double resultado=num1*num1*3.14;
+    return resultado; 
+  }
+  public static double triangulo(double num1,double num2){
+    double resultado=(num1*num2)/2;
+    return resultado; 
+  }
+  
 }
